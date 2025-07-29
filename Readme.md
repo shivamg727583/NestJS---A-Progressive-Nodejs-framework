@@ -96,9 +96,42 @@
   - Receives the client's HTTP request.
   - Calls the right service method to handle logic.
   - Sends back a response to the client.
+- Service :
+  - Contains business logic
+  - Does  not deal with HTTP directly - just logic.  
+- Provider :
+  -  Any class that can injected or reused  (like Service , custom, classes, etc)
+  - Registered in Module to be used via Dependency Injection.
+- Module :
+  - The container that groups controller,services and providers.
+  - Organised the app into features (e.g. ProductModule,UserModule)
+  - Helps keep the app scalable and clean.
+- Dependency Injection :
+  - Nestjs automatically provides services where they are needed.
+  - We don't create new instances manually.
+  - Improves testability and maintainability.
+
+## Dependency Injection (DI)
+- It is a mechanism where the framework automatically provides the required dependency - without creating them manually .
+- It makes code reusable and clean .
+- It makes testing easier.
+- It promotes loose coupling (classes don't tighly depend on each other)
+- It improves readibility and maintainability.
+
+## API - Application Programming Interface
+- It allows two applications to talsk to each other.
+- Acts as a bridge between frontend and backend.
+**RestAPI** -Representational State transfer.
+  - It is a type of API that follows certain rules.
+  - Uses HTTP methods like GET,POST,DELETE,PUT
+  
+
+
     
 
-`
+##     
+
+
 
 
 

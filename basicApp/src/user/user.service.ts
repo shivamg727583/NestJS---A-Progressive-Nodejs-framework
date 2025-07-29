@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class UserService {
@@ -36,6 +37,60 @@ export class UserService {
 
     return user;
  }
+
+
+ // post
+ createUser(user:{name:string,email:string}){
+     const newUser = {
+      id : Date.now(),
+      name: user.name,
+      email: user.email
+
+     }
+     this.users.push(newUser);
+     return newUser;
+
+ }
+
+ // put
+ updateUser(id:number, data:{name:string,email:string}){
+  const idx = this.users.findIndex((user)=> user.id === id);
+  if(idx == -1){
+    throw new NotFoundException("User not found")
+  
+ }
+ this.users[idx] = {...this.users[idx],...data};
+ return this.users[idx];
+
+}
+
+
+// patch
+patchUser(id:number, data: Partial<{ name: string; email: string }>){
+  // const idx = this.users.findIndex((user)=> user.id === id);
+
+  // if(idx==-1) throw new NotFoundException("User not found")
+
+  // this.users[idx] = {...this.users[idx],...data};
+  // return this.users[idx];
+  const user = this.getUserById(id);
+  if(!user) throw new NotFoundException("User not found");
+  Object.assign(user,data);
+  return user;
+
+}
+
+
+// delete
+deleteUser(id:number){
+  const idx = this.users.findIndex((user)=> user.id === id);
+  if(idx==-1) throw new NotFoundException("User not found")
+  this.users.splice(idx,1);
+  return this.users;
+
+
+}
+
 
  
 
