@@ -121,15 +121,22 @@
 ## API - Application Programming Interface
 - It allows two applications to talsk to each other.
 - Acts as a bridge between frontend and backend.
-**RestAPI** -Representational State transfer.
+
+- **RestAPI** -Representational State transfer.
   - It is a type of API that follows certain rules.
   - Uses HTTP methods like GET,POST,DELETE,PUT
-  
 
+## DTO  (Data Transfer Object)
+- An object that carries data between layers (like from client to backend)
+- Used to define the shape  of incoming request data.
+- Ensures only required data is passes .
+- **(Security + validation)**
 
-    
+## Interface in Typescript
+- Interface define the stucture (type) of an object.
+- Help write clean , structure,type-safe code.
+- Used for both request (DTOs) and response objects.
 
-##     
 
 
 
