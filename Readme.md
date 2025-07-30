@@ -58,7 +58,8 @@
  ### Decorators : 
  - Special functions that add metadata to classes or methods.
  - Start with @ symbol (e.g, @Controller, @Get()).
- - Tell NestJS how to trat the classes or method.
+ - Tell NestJS how to trat the classes or method.   
+
  - Used for rounting,dependecny
 
 ## Services 
@@ -131,13 +132,43 @@
 - Used to define the shape  of incoming request data.
 - Ensures only required data is passes .
 - **(Security + validation)**
+### Class-Validator & Class-Transformer
+- Install - ``npm i class-validator class-transformer ``
+- then add this on `main.ts`
+
+```bash
+
+ app.useGlobalPipes(new ValidationPipe({
+    whitelist:true, // remove 
+    forbidNonWhitelisted:true, // show error on unknown field
+    transform:true,
+  }))
+
+  ```
+- 
 
 ## Interface in Typescript
-- Interface define the stucture (type) of an object.
+- Interface define the stucture (type) of an object. (verify type at compile time)
 - Help write clean , structure,type-safe code.
 - Used for both request (DTOs) and response objects.
 
+## Validation Pipe line
+- Pipes are used to transform or validate incoming data.
+- Nestjs allows we to create our Custom Pipes.
+- They can be used for custom validation, data transformation , or business logic filtering.
+- A Pipe runs before the data hits the route handler ( controller method)
+- We can apply pipes at method level, controller level or globally.
+- Custom Pipes implement the pipe transform interface.
 
+## Protected routes using Guards
+- **Protecting Routes** : It means restricting access to specific API routes.
+  - Only authoried users can access these routes.
+- **Guards** : Guards are classes that implement logic to decide whether a request is allowed or not.
+  - They are implement the CanActive interface and run before the route handler.
+  - Mostly used for authentication (proof for access or authentic user ) and authoriation (features allow like for user then user routes and for admin ,admin routes).  
+  - To secure orivate routes.
+  - To avoid duplicating checks in every controller.
+  - To build role-based access control system.
 
 
 
