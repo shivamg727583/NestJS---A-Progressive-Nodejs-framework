@@ -170,6 +170,8 @@
   - To avoid duplicating checks in every controller.
   - To build role-based access control system.
 
+  - ``nest g guard guards/auth `` generate guard for auth
+
 
 
 

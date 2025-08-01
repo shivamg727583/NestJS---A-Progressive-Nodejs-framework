@@ -62,6 +62,9 @@ npm install class-transformer class-validator
  - Added a pipe as `` nest g pipe common/pipes/uppercase ``
  - Here in uppercase pipe , the name will be transform into uppercase.
 ---
-
+### Guards
+- create a guards folder for auth to setup guard 
+- to use guard - use ``` UseGuard(GuardName) ``` in controller 
+-**Role_Based_Authentication** : 0 created new guard in guards folder as role
 ---
 
