@@ -17,6 +17,4 @@ export class ProductService {
     const product = this.products.find((product) => product.id === id);
     return product;
   }
-
-  
 }

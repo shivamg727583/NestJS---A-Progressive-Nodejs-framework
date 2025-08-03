@@ -5,14 +5,14 @@
 //     age:number
 // }
 
-import { IsEmail, IsNumber, IsString } from "class-validator"
+import { IsEmail, IsNumber, IsString } from 'class-validator';
 
 // now using validator
 export class CreateCustomerDto {
-    @IsString()
-    name : string
-    @IsEmail()
-    email:string
-    @IsNumber()
-    age:number
+  @IsString()
+  name: string;
+  @IsEmail()
+  email: string;
+  @IsNumber()
+  age: number;
 }

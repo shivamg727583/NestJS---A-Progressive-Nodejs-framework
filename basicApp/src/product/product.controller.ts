@@ -1,4 +1,10 @@
-import { Controller, Get, Param, ParseIntPipe, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  UseGuards,
+} from '@nestjs/common';
 import { ProductService } from './product.service';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 
@@ -13,6 +19,6 @@ export class ProductController {
   @Get(':id')
   getProductById(@Param('id', ParseIntPipe) id: number) {
     // url id always in string , so we use ParseIntPipe or we can use (Number(id))
-    return this.productService.getProductById(id)}
-
+    return this.productService.getProductById(id);
+  }
 }
